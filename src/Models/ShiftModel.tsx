@@ -1,4 +1,4 @@
 export interface ShiftModel {
-    startDate: string;
-    endDate: string;
+  startDate: string;
+  endDate: string;
 }
