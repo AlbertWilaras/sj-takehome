@@ -1,6 +1,3 @@
-import { AppBar, Box } from '@mui/material';
-import swipejobs from '../swipejobs.svg';
-import React from 'react';
 import './Job.css';
 
 interface JobTitleProps {
