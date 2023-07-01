@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/sj-takehome/static/css/main.073c9b0a.css",
-    "main.js": "/sj-takehome/static/js/main.2a0df33a.js",
+    "main.css": "/sj-takehome/static/css/main.e569a123.css",
+    "main.js": "/sj-takehome/static/js/main.3b927ad7.js",
     "static/js/787.9772a5d6.chunk.js": "/sj-takehome/static/js/787.9772a5d6.chunk.js",
-    "static/media/logo.svg": "/sj-takehome/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/swipejobs.svg": "/sj-takehome/static/media/swipejobs.16ee2c86860560affdc605aaece7f3aa.svg",
     "index.html": "/sj-takehome/index.html",
-    "main.073c9b0a.css.map": "/sj-takehome/static/css/main.073c9b0a.css.map",
-    "main.2a0df33a.js.map": "/sj-takehome/static/js/main.2a0df33a.js.map",
+    "main.e569a123.css.map": "/sj-takehome/static/css/main.e569a123.css.map",
+    "main.3b927ad7.js.map": "/sj-takehome/static/js/main.3b927ad7.js.map",
     "787.9772a5d6.chunk.js.map": "/sj-takehome/static/js/787.9772a5d6.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.2a0df33a.js"
+    "static/css/main.e569a123.css",
+    "static/js/main.3b927ad7.js"
   ]
 }
