@@ -61,12 +61,22 @@ const Job = () => {
     })();
   }, []);
 
+  const removeJob = (jobId: string) => {
+    if (!jobs) {
+      return;
+    }
+    const cur = showNext();
+    setIndex(cur - 1);
+    setJobs(jobs.filter((job) => job.jobId != jobId));
+  };
+
   const showPrev = () => {
     const prev = index - 1;
     setIndex(prev);
     if (jobs) {
       setCurrentJob(jobs[prev]);
     }
+    return prev;
   };
 
   const showNext = () => {
@@ -75,6 +85,7 @@ const Job = () => {
     if (jobs) {
       setCurrentJob(jobs[next]);
     }
+    return next;
   };
 
   if (!currentJob || !jobs) {
@@ -149,7 +160,7 @@ const Job = () => {
                 : `${currentJob.company.reportTo.name}`}
             </p>
           </JobBox>
-          <JobButtons jobId={currentJob.jobId} showNext={showNext} />
+          <JobButtons jobId={currentJob.jobId} removeJob={removeJob} />
         </CardContent>
       </Card>
     </Box>

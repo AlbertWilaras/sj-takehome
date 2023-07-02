@@ -39,10 +39,10 @@ declare module "@mui/material/Button" {
 
 interface JobButtonsProps {
   jobId: string;
-  showNext: () => void;
+  removeJob: (jobId: string) => void;
 }
 
-const JobButtons = ({ jobId, showNext }: JobButtonsProps) => {
+const JobButtons = ({ jobId, removeJob }: JobButtonsProps) => {
   const [hasError, setHasError] = useState<boolean>(false);
   const [errorMessage, setErrorMessage] = useState<string | undefined>();
 
@@ -52,7 +52,7 @@ const JobButtons = ({ jobId, showNext }: JobButtonsProps) => {
       setErrorMessage(data.message);
       setHasError(true);
     } else {
-      showNext();
+      removeJob(jobId);
     }
   };
 
@@ -62,7 +62,7 @@ const JobButtons = ({ jobId, showNext }: JobButtonsProps) => {
       setErrorMessage(data.message);
       setHasError(true);
     } else {
-      showNext();
+      removeJob(jobId);
     }
   };
 
