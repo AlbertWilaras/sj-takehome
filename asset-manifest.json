@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/sj-takehome/static/css/main.2615e666.css",
-    "main.js": "/sj-takehome/static/js/main.a10d3168.js",
+    "main.js": "/sj-takehome/static/js/main.12118c3c.js",
     "static/js/787.9772a5d6.chunk.js": "/sj-takehome/static/js/787.9772a5d6.chunk.js",
     "static/media/swipejobs.svg": "/sj-takehome/static/media/swipejobs.16ee2c86860560affdc605aaece7f3aa.svg",
     "index.html": "/sj-takehome/index.html",
     "main.2615e666.css.map": "/sj-takehome/static/css/main.2615e666.css.map",
-    "main.a10d3168.js.map": "/sj-takehome/static/js/main.a10d3168.js.map",
+    "main.12118c3c.js.map": "/sj-takehome/static/js/main.12118c3c.js.map",
     "787.9772a5d6.chunk.js.map": "/sj-takehome/static/js/787.9772a5d6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2615e666.css",
-    "static/js/main.a10d3168.js"
+    "static/js/main.12118c3c.js"
   ]
 }
