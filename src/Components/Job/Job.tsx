@@ -56,8 +56,9 @@ const Job = () => {
       const data = await getJobMatches();
       setJobs(data);
       if (data.length > 0) {
-        setCurrentJob(data[index]);
+        setCurrentJob(data[0]);
       }
+      setIndex(0);
     })();
   }, []);
 
@@ -67,7 +68,7 @@ const Job = () => {
     }
     const cur = showNext();
     setIndex(cur - 1);
-    setJobs(jobs.filter((job) => job.jobId != jobId));
+    setJobs(jobs.filter((job) => job.jobId !== jobId));
   };
 
   const showPrev = () => {
