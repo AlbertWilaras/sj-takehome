@@ -1,12 +1,13 @@
 import {
   Box,
-  Button,
   Card,
-  CardActions,
   CardContent,
   CardMedia,
   Divider,
+  Grid,
+  IconButton,
 } from "@mui/material";
+import { ArrowBackIos, ArrowForwardIos } from "@mui/icons-material";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import advanced from "dayjs/plugin/advancedFormat";
@@ -47,6 +48,7 @@ const formatShift = (shift: ShiftModel, timeZone: string) => {
 
 const Job = () => {
   const [jobs, setJobs] = useState<JobModel[] | undefined>();
+  const [index, setIndex] = useState<number>(0);
   const [currentJob, setCurrentJob] = useState<JobModel | undefined>();
 
   useEffect(() => {
@@ -54,12 +56,28 @@ const Job = () => {
       const data = await getJobMatches();
       setJobs(data);
       if (data.length > 0) {
-        setCurrentJob(data[1]);
+        setCurrentJob(data[index]);
       }
     })();
   }, []);
 
-  if (!currentJob) {
+  const showPrev = () => {
+    const prev = index - 1;
+    setIndex(prev);
+    if (jobs) {
+      setCurrentJob(jobs[prev]);
+    }
+  };
+
+  const showNext = () => {
+    const next = index + 1;
+    setIndex(next);
+    if (jobs) {
+      setCurrentJob(jobs[next]);
+    }
+  };
+
+  if (!currentJob || !jobs) {
     return (
       <p>No Jobs Available. Please check again later or widen your search.</p>
     );
@@ -92,6 +110,25 @@ const Job = () => {
             <p>{currentJob.company.address.formattedAddress}</p>
             <sub>{`${currentJob.milesToTravel} miles from your job search location`}</sub>
           </JobBox>
+          <Grid
+            container
+            justifyContent={"space-between"}
+            alignItems={"center"}
+          >
+            <Grid item xs={1}>
+              <IconButton disabled={index <= 0} onClick={showPrev}>
+                <ArrowBackIos fontSize="small" />
+              </IconButton>
+            </Grid>
+            <Grid item xs={1}>
+              <IconButton
+                disabled={index >= jobs.length - 1}
+                onClick={showNext}
+              >
+                <ArrowForwardIos fontSize="small" />
+              </IconButton>
+            </Grid>
+          </Grid>
           <Divider />
           {currentJob.requirements && (
             <>
@@ -112,7 +149,7 @@ const Job = () => {
                 : `${currentJob.company.reportTo.name}`}
             </p>
           </JobBox>
-          <JobButtons jobId={currentJob.jobId} />
+          <JobButtons jobId={currentJob.jobId} showNext={showNext} />
         </CardContent>
       </Card>
     </Box>

@@ -1,4 +1,4 @@
-import { JobModel } from "./Models/JobModel";
+import { JobModel, ResponseModel } from "./Models/JobModel";
 import { ProfileModel } from "./Models/ProfileModel";
 
 const API_URL = "https://test.swipejobs.com/api/worker";
@@ -11,5 +11,19 @@ export async function getProfile(): Promise<ProfileModel> {
 
 export async function getJobMatches(): Promise<JobModel[]> {
   const response = await fetch(API_URL + `/${WORKER_ID}` + "/matches");
+  return response.json();
+}
+
+export async function acceptJob(jobId: string): Promise<ResponseModel> {
+  const response = await fetch(
+    API_URL + `/${WORKER_ID}` + "/job" + `/${jobId}` + "/accept"
+  );
+  return response.json();
+}
+
+export async function rejectJob(jobId: string): Promise<ResponseModel> {
+  const response = await fetch(
+    API_URL + `/${WORKER_ID}` + "/job" + `/${jobId}` + "/reject"
+  );
   return response.json();
 }

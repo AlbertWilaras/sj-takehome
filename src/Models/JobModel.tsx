@@ -17,3 +17,9 @@ export interface JobModel {
   branchPhoneNumber: string;
   requirements?: string[];
 }
+
+export interface ResponseModel {
+  success: boolean;
+  message?: string;
+  errorCode?: string;
+}
