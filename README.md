@@ -1,6 +1,13 @@
-# Getting Started with Create React App
+# Introduction
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I chose to use [Material UI](https://mui.com/) - an opensource component library and it was relatively enjoyable to use, albeit with some styling limitations.
+
+Dayjs vs Moment.js -> I found Dayjs to be a good alternative to Moment.js and is a lot more lightweight. I needed to include a plugin to do timezone conversions, however.
+
+[react-testing-library](https://testing-library.com/docs/react-testing-library/intro/) is what I used for testing components. I think it's a great testing tool for any component.
+
+This would be a great webapp to use on mobile devices. Hope you enjoy what I made! If not, I would highly appreciate any feedback you could give.
 
 ## Available Scripts
 
